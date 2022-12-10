@@ -11,5 +11,6 @@ router.get('/Const', auth(), constController.getAllConst);
 router.get('/Const/:id', auth(), constController.getAssetConst);
 router.put('/Const/:id', auth(), constController.updateConst);
 router.delete('/Const/:id', auth(), constController.deleteConst);
+router.post('/Const/confirm/:id', auth(), constController.confirmConst);
 
 module.exports = router;

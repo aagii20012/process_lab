@@ -11,6 +11,16 @@ const createAsset = async (assetBody, usedId) => {
   return Asset.create(data);
 };
 
+const createFromConst = async (assetBody, usedId) => {
+  const data = {
+    title: assetBody.title,
+    type: assetBody.type,
+    amount: assetBody.amount,
+    userId: usedId,
+  };
+  return Asset.create(data);
+};
+
 function getLastWeek() {
   var today = new Date(Date.now());
   var lastWeek = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 6);
@@ -89,4 +99,5 @@ module.exports = {
   getAsset,
   updateAsset,
   deleteAsset,
+  createFromConst,
 };
